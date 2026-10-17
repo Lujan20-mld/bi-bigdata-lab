@@ -27,3 +27,11 @@ databaseChangeLog:
   - include:
       file: changes/009_create_bronze_raw_tables.sql
       relativeToChangelogFile: true
+
+  - include:
+      file: changes/010_create_customers_raw.sql
+      relativeToChangelogFile: true
+
+  - include:
+      file: changes/011_create_stores_raw.sql
+      relativeToChangelogFile: true
