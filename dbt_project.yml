@@ -3,7 +3,7 @@ name: 'my_new_project'
 version: '1.0.0'
 config-version: 2
 
-# Perfil de conexion
+# Perfil de conexión
 profile: 'default'
 
 # Rutas del proyecto
@@ -17,12 +17,12 @@ snapshot-paths: ["snapshots"]
 # Directorio de archivos compilados
 target-path: "target"
 
-# Directorios que dbt clean puede eliminar
+# Directorios que dbt puede eliminar
 clean-targets:
   - "target"
   - "dbt_packages"
 
-# Configuracion de los modelos
+# Configuración de los modelos
 models:
   my_new_project:
 
@@ -30,10 +30,16 @@ models:
     example:
       +materialized: table
 
-    # Modelos de preparacion de datos
+    # Capa Silver
     staging:
       +materialized: view
+      +schema: silver
 
-    # Modelo que combina ventas y productos
+    # Modelo intermedio
     intermediate:
       +materialized: view
+
+    # Capa Gold
+    marts:
+      +materialized: table
+      +schema: gold

@@ -10,3 +10,7 @@ sources:
         description: "Ventas crudas."
       - name: products_raw
         description: "Productos crudos."
+      - name: customers_raw
+        description: "Clientes crudos."
+      - name: stores_raw
+        description: "Tiendas crudas."
